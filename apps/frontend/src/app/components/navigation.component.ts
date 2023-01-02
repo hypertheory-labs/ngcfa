@@ -20,7 +20,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           routerLink="about"
           >About</a
         >
-        <a class="tab tab-bordered">Feature</a>
+        <a
+          class="tab tab-bordered"
+          [routerLinkActive]="['tab-active']"
+          routerLink="feature"
+          >Feature</a
+        >
       </div>
     </nav>
   `,
