@@ -1,0 +1,16 @@
+{
+  "Angular Standalone Component": {
+    "prefix": "ngsac",
+    "description": "Angular Standalone Component",
+    "body": [
+      "import { Component } from '@angular/core';",
+      "",
+      "@Component({",
+      "selector: '$WORKSPACE_NAME-${1:selector}',",
+      "standalone: true,",
+      "template: `$0<p>$1 works</p>`,",
+      "})",
+      "export class ${1/(.)(.*)/${1:/upcase}${2:/camelcase}/}Component {}"
+    ]
+  }
+}
