@@ -3,16 +3,16 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectCurrentCount } from '../state';
 import { CounterCommands } from '../state/counter.actions';
-
+import { ButtonDirective } from '@ht/ui';
 @Component({
   selector: 'ht-feature-counter',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, ButtonDirective],
   template: `
     <section>
-      <button class="btn btn-warning" (click)="decrement()">-</button>
-      <span class="p-8 text-3xl">{{ current$ | async }}</span>
-      <button class="btn btn-success" (click)="increment()">+</button>
+      <button htUiButton variant="warning" (click)="decrement()">-</button>
+      <span htUiLabel>{{ current$ | async }}</span>
+      <button htUiButton variant="primary" (click)="increment()">+</button>
     </section>
   `,
 })
@@ -24,5 +24,9 @@ export class FeatureCounterComponent {
   }
   decrement() {
     this.store.dispatch(CounterCommands.countDecremented());
+  }
+
+  reset() {
+    this.store.dispatch(CounterCommands.countReset());
   }
 }

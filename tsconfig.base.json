@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ht/feature": ["libs/feature/src/index.ts"]
+      "@ht/feature": ["libs/feature/src/index.ts"],
+      "@ht/ui": ["libs/core-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
